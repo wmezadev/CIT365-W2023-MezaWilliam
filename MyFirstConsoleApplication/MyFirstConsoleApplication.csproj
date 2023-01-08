@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Person.cs" />
-    <Compile Include="Helper.cs" />
     <Compile Include="GlazerCalc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
