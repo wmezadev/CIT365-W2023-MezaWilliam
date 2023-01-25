@@ -16,5 +16,11 @@ namespace MegaDesk
         {
             InitializeComponent();
         }
+
+        private void SearchQuotes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainMenu formMainMenu = (MainMenu)Tag;
+            formMainMenu.Show();
+        }
     }
 }

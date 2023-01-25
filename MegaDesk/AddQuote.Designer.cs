@@ -41,18 +41,21 @@
             this.comboBoxMaterial = new System.Windows.Forms.ComboBox();
             this.labelRush = new System.Windows.Forms.Label();
             this.comboBoxRush = new System.Windows.Forms.ComboBox();
-            this.buttonSaveQuote = new System.Windows.Forms.Button();
+            this.labelCurrentDate = new System.Windows.Forms.Label();
             this.buttonCancelQuote = new System.Windows.Forms.Button();
+            this.buttonSaveQuote = new System.Windows.Forms.Button();
+            this.panelAddNewQuoteCTAs = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDrawers)).BeginInit();
+            this.panelAddNewQuoteCTAs.SuspendLayout();
             this.SuspendLayout();
             // 
             // newQuoteLabelTitle
             // 
             this.newQuoteLabelTitle.AutoSize = true;
             this.newQuoteLabelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newQuoteLabelTitle.Location = new System.Drawing.Point(292, 38);
+            this.newQuoteLabelTitle.Location = new System.Drawing.Point(289, 62);
             this.newQuoteLabelTitle.Name = "newQuoteLabelTitle";
             this.newQuoteLabelTitle.Size = new System.Drawing.Size(196, 24);
             this.newQuoteLabelTitle.TabIndex = 0;
@@ -86,24 +89,9 @@
             // numericUpDownWidth
             // 
             this.numericUpDownWidth.Location = new System.Drawing.Point(216, 180);
-            this.numericUpDownWidth.Maximum = new decimal(new int[] {
-            96,
-            0,
-            0,
-            0});
-            this.numericUpDownWidth.Minimum = new decimal(new int[] {
-            24,
-            0,
-            0,
-            0});
             this.numericUpDownWidth.Name = "numericUpDownWidth";
             this.numericUpDownWidth.Size = new System.Drawing.Size(100, 20);
             this.numericUpDownWidth.TabIndex = 4;
-            this.numericUpDownWidth.Value = new decimal(new int[] {
-            24,
-            0,
-            0,
-            0});
             // 
             // label1
             // 
@@ -117,24 +105,9 @@
             // numericUpDownDepth
             // 
             this.numericUpDownDepth.Location = new System.Drawing.Point(216, 228);
-            this.numericUpDownDepth.Maximum = new decimal(new int[] {
-            48,
-            0,
-            0,
-            0});
-            this.numericUpDownDepth.Minimum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
             this.numericUpDownDepth.Name = "numericUpDownDepth";
             this.numericUpDownDepth.Size = new System.Drawing.Size(100, 20);
             this.numericUpDownDepth.TabIndex = 6;
-            this.numericUpDownDepth.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
             // 
             // labelDrawers
             // 
@@ -148,11 +121,6 @@
             // numericUpDownDrawers
             // 
             this.numericUpDownDrawers.Location = new System.Drawing.Point(531, 134);
-            this.numericUpDownDrawers.Maximum = new decimal(new int[] {
-            7,
-            0,
-            0,
-            0});
             this.numericUpDownDrawers.Name = "numericUpDownDrawers";
             this.numericUpDownDrawers.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownDrawers.TabIndex = 8;
@@ -169,12 +137,6 @@
             // comboBoxMaterial
             // 
             this.comboBoxMaterial.FormattingEnabled = true;
-            this.comboBoxMaterial.Items.AddRange(new object[] {
-            "laminate",
-            "oak",
-            "rosewood",
-            "veneer",
-            "pine"});
             this.comboBoxMaterial.Location = new System.Drawing.Point(530, 178);
             this.comboBoxMaterial.Name = "comboBoxMaterial";
             this.comboBoxMaterial.Size = new System.Drawing.Size(121, 21);
@@ -202,34 +164,65 @@
             this.comboBoxRush.Size = new System.Drawing.Size(121, 21);
             this.comboBoxRush.TabIndex = 12;
             // 
+            // labelCurrentDate
+            // 
+            this.labelCurrentDate.AutoSize = true;
+            this.labelCurrentDate.Location = new System.Drawing.Point(584, 35);
+            this.labelCurrentDate.Name = "labelCurrentDate";
+            this.labelCurrentDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelCurrentDate.Size = new System.Drawing.Size(67, 13);
+            this.labelCurrentDate.TabIndex = 15;
+            this.labelCurrentDate.Text = "Current Date";
+            this.labelCurrentDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // buttonCancelQuote
+            // 
+            this.buttonCancelQuote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
+            this.buttonCancelQuote.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.buttonCancelQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelQuote.Location = new System.Drawing.Point(400, 39);
+            this.buttonCancelQuote.Name = "buttonCancelQuote";
+            this.buttonCancelQuote.Size = new System.Drawing.Size(109, 23);
+            this.buttonCancelQuote.TabIndex = 14;
+            this.buttonCancelQuote.Text = "Cancel Quote";
+            this.buttonCancelQuote.UseVisualStyleBackColor = false;
+            this.buttonCancelQuote.Click += new System.EventHandler(this.buttonCancelQuote_Click);
+            // 
             // buttonSaveQuote
             // 
-            this.buttonSaveQuote.BackColor = System.Drawing.SystemColors.Highlight;
+            this.buttonSaveQuote.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(184)))));
+            this.buttonSaveQuote.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(95)))), ((int)(((byte)(184)))));
+            this.buttonSaveQuote.FlatAppearance.BorderSize = 2;
+            this.buttonSaveQuote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaveQuote.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveQuote.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonSaveQuote.Location = new System.Drawing.Point(404, 354);
+            this.buttonSaveQuote.ForeColor = System.Drawing.Color.White;
+            this.buttonSaveQuote.Location = new System.Drawing.Point(239, 39);
             this.buttonSaveQuote.Name = "buttonSaveQuote";
             this.buttonSaveQuote.Size = new System.Drawing.Size(121, 23);
             this.buttonSaveQuote.TabIndex = 13;
             this.buttonSaveQuote.Text = "Save Quote";
             this.buttonSaveQuote.UseVisualStyleBackColor = false;
+            this.buttonSaveQuote.Click += new System.EventHandler(this.buttonSaveQuote_Click);
             // 
-            // buttonCancelQuote
+            // panelAddNewQuoteCTAs
             // 
-            this.buttonCancelQuote.Location = new System.Drawing.Point(258, 354);
-            this.buttonCancelQuote.Name = "buttonCancelQuote";
-            this.buttonCancelQuote.Size = new System.Drawing.Size(109, 23);
-            this.buttonCancelQuote.TabIndex = 14;
-            this.buttonCancelQuote.Text = "Cancel Quote";
-            this.buttonCancelQuote.UseVisualStyleBackColor = true;
+            this.panelAddNewQuoteCTAs.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelAddNewQuoteCTAs.Controls.Add(this.buttonSaveQuote);
+            this.panelAddNewQuoteCTAs.Controls.Add(this.buttonCancelQuote);
+            this.panelAddNewQuoteCTAs.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelAddNewQuoteCTAs.Location = new System.Drawing.Point(0, 350);
+            this.panelAddNewQuoteCTAs.Name = "panelAddNewQuoteCTAs";
+            this.panelAddNewQuoteCTAs.Size = new System.Drawing.Size(800, 100);
+            this.panelAddNewQuoteCTAs.TabIndex = 16;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonCancelQuote);
-            this.Controls.Add(this.buttonSaveQuote);
+            this.Controls.Add(this.panelAddNewQuoteCTAs);
+            this.Controls.Add(this.labelCurrentDate);
             this.Controls.Add(this.comboBoxRush);
             this.Controls.Add(this.labelRush);
             this.Controls.Add(this.comboBoxMaterial);
@@ -245,9 +238,11 @@
             this.Controls.Add(this.newQuoteLabelTitle);
             this.Name = "AddQuote";
             this.Text = "Add Quote";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddQuote_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDrawers)).EndInit();
+            this.panelAddNewQuoteCTAs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,7 +263,9 @@
         private System.Windows.Forms.ComboBox comboBoxMaterial;
         private System.Windows.Forms.Label labelRush;
         private System.Windows.Forms.ComboBox comboBoxRush;
-        private System.Windows.Forms.Button buttonSaveQuote;
+        private System.Windows.Forms.Label labelCurrentDate;
         private System.Windows.Forms.Button buttonCancelQuote;
+        private System.Windows.Forms.Button buttonSaveQuote;
+        private System.Windows.Forms.Panel panelAddNewQuoteCTAs;
     }
 }

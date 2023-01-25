@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MegaDesk
@@ -18,9 +11,31 @@ namespace MegaDesk
         }
         private void AddNewQuoteNav_Click(object sender, EventArgs e)
         {
-            AddQuote Check = new AddQuote();
-            Check.Show();
+            AddQuote formAddQuote = new AddQuote();
+            formAddQuote.Tag = this;
+            formAddQuote.Show(this);
             Hide();
+        }
+
+        private void ViewNewQuoteNav_Click(object sender, EventArgs e)
+        {
+            ViewAllQuotes formViewAllQuotes = new ViewAllQuotes();
+            formViewAllQuotes.Tag = this;
+            formViewAllQuotes.Show(this);
+            Hide();
+        }
+
+        private void SearchQuotesNav_Click(object sender, EventArgs e)
+        {
+            SearchQuotes formSearchQuotes = new SearchQuotes();
+            formSearchQuotes.Tag = this;
+            formSearchQuotes.Show(this);
+            Hide();
+        }
+
+        private void ExitNav_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
