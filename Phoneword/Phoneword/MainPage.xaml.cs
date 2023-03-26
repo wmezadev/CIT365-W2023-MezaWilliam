@@ -3,15 +3,15 @@
 public partial class MainPage : ContentPage
 {
     string translatedNumber;
-    public MainPage()
+	public MainPage()
 	{
 		InitializeComponent();
-	}
+    }
 
     private void OnTranslate(object sender, EventArgs e)
     {
         string enteredNumber = PhoneNumberText.Text;
-        translatedNumber = Phoneword.PhonewordTranslator.ToNumber(enteredNumber);
+        translatedNumber = Core.PhonewordTranslator.ToNumber(enteredNumber);
 
         if (!string.IsNullOrEmpty(translatedNumber))
         {
@@ -49,6 +49,5 @@ public partial class MainPage : ContentPage
             }
         }
     }
-
 }
 
